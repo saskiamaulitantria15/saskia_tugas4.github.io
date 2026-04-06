@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Polimorfisme dan Abstraksi - Saskia Mauli Tantria</title>
+<title>Polimorfisme dan Abstraksi - Saskia</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -15,7 +15,6 @@ background:linear-gradient(135deg,#ffe6f0,#fff5fa);
 color:#444;
 }
 
-/* HEADER */
 header{
 text-align:center;
 padding:40px 20px;
@@ -24,65 +23,63 @@ box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 header h1{
-font-size:30px;
+font-size:28px;
 color:#c94f7c;
 margin-bottom:10px;
 }
 
-/* CONTAINER */
+header p{font-size:14px;}
+
 .container{
 max-width:1100px;
 margin:auto;
 padding:40px 20px;
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-/* CARD */
 .card{
 background:white;
 border-radius:18px;
-padding:20px;
+padding:25px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
 }
 
 .card h2{
 color:#d63384;
-font-size:18px;
 margin-bottom:10px;
 }
 
-/* BUTTON */
+textarea{
+width:100%;
+height:150px;
+border-radius:10px;
+padding:10px;
+margin-top:10px;
+font-family:monospace;
+}
+
 .btn{
+margin-top:10px;
 padding:10px 18px;
 background:linear-gradient(135deg,#ff8fb1,#ff6fa5);
 color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
-margin-top:10px;
 }
 
-/* MODAL */
 .modal{
 display:none;
 position:fixed;
-z-index:1000;
-left:0;
-top:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.6);
+top:0;left:0;
 }
 
 .modal-content{
@@ -94,25 +91,18 @@ max-width:900px;
 border-radius:15px;
 }
 
-.close{
-float:right;
-font-size:22px;
-cursor:pointer;
-}
-
 iframe{
 width:100%;
 height:500px;
 border:none;
-border-radius:10px;
 }
 
-/* RESPONSIVE */
-@media(max-width:600px){
-iframe{height:400px;}
+.close{
+float:right;
+font-size:20px;
+cursor:pointer;
 }
 </style>
-
 </head>
 
 <body>
@@ -126,6 +116,7 @@ iframe{height:400px;}
 <div class="container">
 <div class="grid">
 
+<!-- MATERI -->
 <div class="card">
 <h2>Pengertian Polimorfisme</h2>
 <p>Polimorfisme adalah konsep OOP yang memungkinkan satu method memiliki banyak bentuk.</p>
@@ -135,12 +126,6 @@ iframe{height:400px;}
 <li>Meningkatkan fleksibilitas</li>
 <li>Mudah dikembangkan</li>
 </ul>
-</div>
-
-<div class="card">
-<h2>Polimorfisme dengan Inheritance</h2>
-<p>Polimorfisme memungkinkan satu variabel dengan tipe parent menyimpan objek child.</p>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4&run=true')">Lihat</button>
 </div>
 
 <div class="card">
@@ -154,67 +139,157 @@ iframe{height:400px;}
 </div>
 
 <div class="card">
-<h2>Operator is dan as</h2>
-<p>Digunakan untuk pengecekan dan casting tipe data.</p>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c&run=true')">Lihat</button>
-</div>
-
-<div class="card">
 <h2>Pengertian Abstraksi</h2>
 <p>Abstraksi adalah proses menyembunyikan detail kompleks dan hanya menampilkan bagian penting.</p>
-</div>
-
-<div class="card">
-<h2>Abstract Class</h2>
-<p>Abstract class tidak bisa dibuat objek.</p>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f&run=true')">Lihat</button>
-</div>
-
-<div class="card">
-<h2>Abstract Method</h2>
-<p>Method tanpa isi yang wajib diimplementasikan.</p>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a&run=true')">Lihat</button>
-</div>
-
-<div class="card">
-<h2>Interface di Dart</h2>
-<p>Menggunakan implements.</p>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078&run=true')">Lihat</button>
+<ul>
+<li>Menyederhanakan program</li>
+<li>Fokus pada fungsi utama</li>
+<li>Meningkatkan keamanan</li>
+</ul>
 </div>
 
 <div class="card">
 <h2>Perbedaan Extends dan Implements</h2>
 <ul>
-<li>extends mewarisi isi</li>
-<li>implements struktur</li>
+<li>extends mewarisi isi method</li>
+<li>implements hanya struktur</li>
+<li>implements wajib override semua method</li>
 </ul>
 </div>
 
+<!-- PROGRAM 1 -->
 <div class="card">
-<h2>Static Member & Method</h2>
-<p>Diakses tanpa objek.</p>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5&run=true')">Lihat</button>
+<h2>Program 1 - Polimorfisme</h2>
+
+<textarea id="c1">
+class Hewan {
+  void suara(){
+    print("Hewan bersuara");
+  }
+}
+
+class Kucing extends Hewan {
+  void suara(){
+    print("Meong");
+  }
+}
+
+void main(){
+  Hewan h = Kucing();
+  h.suara();
+}
+</textarea>
+
+<button class="btn" onclick="runCode('c1')">Run</button>
 </div>
 
+<!-- PROGRAM 2 -->
 <div class="card">
-<h2>Sistem Pembayaran</h2>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37&run=true')">Lihat</button>
+<h2>Program 2 - Operator is dan as</h2>
+
+<textarea id="c2">
+void main(){
+  dynamic hewan = "Kucing";
+
+  if(hewan is String){
+    print("Ini String");
+  }
+}
+</textarea>
+
+<button class="btn" onclick="runCode('c2')">Run</button>
 </div>
 
+<!-- PROGRAM 3 -->
 <div class="card">
-<h2>Studi Kasus Geometri</h2>
-<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6&run=true')">Lihat</button>
+<h2>Program 3 - Abstract Class</h2>
+
+<textarea id="c3">
+abstract class Hewan {
+  void suara();
+}
+
+class Kucing extends Hewan {
+  void suara(){
+    print("Meong");
+  }
+}
+
+void main(){
+  Kucing k = Kucing();
+  k.suara();
+}
+</textarea>
+
+<button class="btn" onclick="runCode('c3')">Run</button>
 </div>
 
+<!-- PROGRAM 4 -->
+<div class="card">
+<h2>Program 4 - Abstract Method</h2>
+
+<textarea id="c4">
+abstract class Hewan {
+  void suara();
+}
+</textarea>
+
+<button class="btn" onclick="runCode('c4')">Run</button>
+</div>
+
+<!-- PROGRAM 5 -->
+<div class="card">
+<h2>Program 5 - Interface</h2>
+
+<textarea id="c5">
+class Hewan {
+  void suara(){}
+}
+
+class Kucing implements Hewan {
+  void suara(){
+    print("Meong");
+  }
+}
+
+void main(){
+  Kucing k = Kucing();
+  k.suara();
+}
+</textarea>
+
+<button class="btn" onclick="runCode('c5')">Run</button>
+</div>
+
+<!-- PROGRAM 6 -->
+<div class="card">
+<h2>Program 6 - Static</h2>
+
+<textarea id="c6">
+class Matematika {
+  static int tambah(int a, int b){
+    return a+b;
+  }
+}
+
+void main(){
+  print(Matematika.tambah(2,3));
+}
+</textarea>
+
+<button class="btn" onclick="runCode('c6')">Run</button>
+</div>
+
+<!-- KESIMPULAN -->
 <div class="card">
 <h2>Kesimpulan</h2>
-<p>Dengan konsep OOP, program menjadi lebih terstruktur dan mudah dikembangkan.</p>
+<p>Dengan konsep OOP seperti polimorfisme dan abstraksi, program menjadi lebih fleksibel, aman, dan mudah dikembangkan.</p>
 </div>
 
 </div>
 </div>
 
-<!-- MODAL -->
+<!-- POPUP -->
 <div id="dartModal" class="modal">
 <div class="modal-content">
 <span class="close" onclick="closePad()">✖</span>
@@ -223,9 +298,13 @@ iframe{height:400px;}
 </div>
 
 <script>
-function openPad(link){
+function runCode(id){
+let code = document.getElementById(id).value;
+let encoded = encodeURIComponent(code);
+
 document.getElementById("dartModal").style.display="block";
-document.getElementById("dartFrame").src=link;
+document.getElementById("dartFrame").src =
+"https://dartpad.dev/embed-inline.html?code=" + encoded + "&run=true";
 }
 
 function closePad(){
