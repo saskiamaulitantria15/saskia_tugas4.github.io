@@ -111,16 +111,18 @@ target.innerHTML =
 </div>
 
 <div class="card">
-<h3>Program 1</h3>
+<h3>Polimorfisme dengan Inheritance</h3>
+
 <p>
 Polimorfisme memungkinkan satu variabel dengan tipe parent
 menyimpan objek child, sehingga method yang sama dapat menghasilkan
 output berbeda sesuai objeknya.
 </p>
 
-<button onclick="buka('p1','https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4')">Jalankan Program</button>
-<div id="p1"></div>
-</div>
+<button class="btn" onclick="openPad('https://dartpad.dev/c97f81fc10217801e544c28178350ec4')>
+Lihat DartPad
+</button>
+</div> 
 
 <div class="card">
 
@@ -153,9 +155,10 @@ melakukan casting atau mengubah tipe objek.
 </p>
 
 <h3>Program 2</h3>
-<button onclick="buka('p2','https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c')">Jalankan Program</button>
-<div id="p2"></div>
-</div>
+<button class="btn" onclick="openPad('https://dartpad.dev/630b27241f56d914b328120fcfd9073c')>
+Lihat DartPad
+</button>
+</div>  
 
 <div class="card">
 <h2>Pengertian Abstraksi</h2>
@@ -168,46 +171,104 @@ melakukan casting atau mengubah tipe objek.
 </div>
 
 <div class="card">
-<h3>Program 3</h3>
+<h3>Abstrak Class</h3>
 
 <p>
 Program ini menggunakan abstract class sebagai dasar class turunan.
 Abstract class tidak bisa dibuat objek, tetapi method di dalamnya
 wajib diimplementasikan oleh class turunan.
 </p>
+  
+<h3>Program 2</h3>
+<button class="btn" onclick="openPad('https://dartpad.dev/e42d7cd17e77cd8b71e68f6f36afb48f')>
+Lihat DartPad
+</button>
+</div>  
 
-<button onclick="buka('p3','https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f')">Jalankan Program</button>
-<div id="p3"></div>
-</div>
+<h3>Abstract Method</h3>
+<p>
+Program ini menunjukkan penggunaan <b>abstract method</b> dalam abstract class.
+Abstract method adalah method yang tidak memiliki isi (tanpa implementasi)
+dan hanya dideklarasikan pada abstract class.
+</p>
+  
+<h3>Program 2</h3>
+<button class="btn" onclick="openPad('https://dartpad.dev/b5fe85a8914dc8ae9a3398686712f76a')>
+Lihat DartPad
+</button>
+</div>  
 
 <div class="card">
-<h3>Program 4</h3>
-<button onclick="buka('p4','https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a')">Jalankan Program</button>
-<div id="p4"></div>
-</div>
+<h3>Interface di Dart</h3>
+
+<ul>
+<li>Dart tidak memiliki keyword khusus <b>interface</b></li>
+<li>Semua class bisa digunakan sebagai interface</li>
+<li>Menggunakan keyword <b>implements</b></li>
+<li>Semua method harus diimplementasikan ulang</li>
+<li>Tidak mewarisi isi method, hanya strukturnya</li>
+</ul>
+
+<p><i>Interface membantu memastikan setiap class memiliki struktur method yang sama.</i></p>
+<h3>Program 2</h3>
+<h3>Program 2</h3>
+<button class="btn" onclick="openPad('https://dartpad.dev/4c1ff4cdbd19490a8fc80ef241fb3078')>
+Lihat DartPad
+</button>
+</div>  
+  
+<div class="card">
+
+<h2>Perbedaan Extends dan Implements</h2>
 
 <div class="card">
-<h3>Program 5</h3>
-<button onclick="buka('p5','https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078')">Jalankan Program</button>
-<div id="p5"></div>
+
+<ul>
+<li><b>extends</b> digunakan untuk pewarisan (inheritance)</li>
+<li><b>implements</b> digunakan untuk menerapkan interface</li>
+<li><b>extends</b> mewarisi method beserta isinya</li>
+<li><b>implements</b> hanya mewarisi struktur method</li>
+<li><b>extends</b> tidak wajib override semua method</li>
+<li><b>implements</b> wajib override semua method</li>
+</ul>
+
+<p>
+Pada <b>implements</b>, semua method harus ditulis ulang karena tidak mewarisi isi method.
+Sedangkan pada <b>extends</b>, method dari parent bisa langsung digunakan.
+</p>
+
+<p><i>Pemilihan extends atau implements bergantung pada kebutuhan struktur program.</i></p>
+
 </div>
 
 <div class="card">
 <h3>Program 6</h3>
+<p>
+Static adalah anggota class (variabel atau method) yang dapat diakses tanpa membuat objek terlebih dahulu.
+</p>
+
+<p>
+Static member biasanya digunakan untuk menyimpan data yang bersifat umum,
+sedangkan static method digunakan untuk menjalankan fungsi yang tidak bergantung pada objek.
+</p>
 <button onclick="buka('p6','https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5')">Jalankan Program</button>
 <div id="p6"></div>
 </div>
 
 <div class="card">
-<h3>Program 7</h3>
-<button onclick="buka('p7','https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37')">Jalankan Program</button>
-<div id="p7"></div>
+<h3>Sistem Pembayaran</h3>
+<h3>Program 2</h3>
+<button class="btn" onclick="openPad('https://dartpad.dev/c50c333dd08e867de98b6f24a37c6a37')>
+Lihat DartPad
+</button>
 </div>
 
 <div class="card">
-<h3>Program 8</h3>
-<button onclick="buka('p8','https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6')">Jalankan Program</button>
-<div id="p8"></div>
+<h3>Studi Kasus: Sistem Bentuk Geometri</h3>
+<h3>Program 2</h3>
+<button class="btn" onclick="openPad('https://dartpad.dev/bc10324b593225722561015f14ee4fe6')>
+Lihat DartPad
+</button>
 </div>
 
 </div>
