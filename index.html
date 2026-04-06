@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polimorfisme dan Abstraksi</title>
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+background:linear-gradient(135deg,#ffe4ec,#ffd6e0,#fff0f5);
+color:#444;
+}
+
+header{
+text-align:center;
+padding:30px;
+color:#c2185b;
+}
+
+.identitas{
+background:white;
+margin:0 auto 20px;
+max-width:500px;
+padding:15px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+font-size:14px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:16px;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+.card h2{
+color:#d63384;
+}
+
+button{
+background:linear-gradient(135deg,#ff8fab,#ffb3c6);
+border:none;
+padding:12px 20px;
+border-radius:10px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+iframe{
+margin-top:15px;
+border:none;
+border-radius:12px;
+width:100%;
+height:500px;
+}
+
+@media(max-width:600px){
+iframe{height:400px;}
+}
+</style>
+
+<script>
+function buka(id,link){
+let target=document.getElementById(id);
+if(target.innerHTML===""){
+target.innerHTML =
+'<iframe src="'+link+'?run=true&null_safety=true"></iframe>';
+}
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Polimorfisme dan Abstraksi</h1>
+
+<div class="identitas">
+<p><b>Nama:</b> Saskia Mauli Tantria</p>
+<p><b>NIM:</b> 251410034</p>
+<p><b>Kelas:</b> SI2A</p>
+</div>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Pengertian Polimorfisme</h2>
+<p>Polimorfisme adalah konsep OOP yang memungkinkan satu method memiliki banyak bentuk.</p>
+<p>Method yang sama dapat melakukan aksi berbeda tergantung objeknya.</p>
+<ul>
+<li>Mengurangi duplikasi kode</li>
+<li>Meningkatkan fleksibilitas</li>
+<li>Mudah dikembangkan</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Program 1</h3>
+<p>
+Polimorfisme memungkinkan satu variabel dengan tipe parent
+menyimpan objek child, sehingga method yang sama dapat menghasilkan
+output berbeda sesuai objeknya.
+</p>
+
+<button onclick="buka('p1','https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4')">Jalankan Program</button>
+<div id="p1"></div>
+</div>
+
+<div class="card">
+
+<h2>Manfaat Polimorfisme</h2>
+
+<ul>
+<li><b>Fleksibilitas:</b> Program dapat bekerja dengan berbagai tipe objek tanpa mengubah kode utama.</li>
+
+<li><b>Extensibility:</b> Mudah menambahkan class baru tanpa mengubah struktur program yang sudah ada.</li>
+
+<li><b>Code Reusability:</b> Method yang sama dapat digunakan kembali pada banyak class.</li>
+
+<li><b>Maintainability:</b> Kode lebih mudah diperbaiki dan dikembangkan.</li>
+</ul>
+
+<p>
+Dengan adanya polimorfisme, program menjadi lebih efisien, rapi, dan mudah dikembangkan di masa depan.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Operator is dan as</h2>
+
+<p>
+Dalam Dart, operator <b>is</b> digunakan untuk mengecek apakah suatu objek
+memiliki tipe tertentu, sedangkan operator <b>as</b> digunakan untuk
+melakukan casting atau mengubah tipe objek.
+</p>
+
+<h3>Program 2</h3>
+<button onclick="buka('p2','https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c')">Jalankan Program</button>
+<div id="p2"></div>
+</div>
+
+<div class="card">
+<h2>Pengertian Abstraksi</h2>
+<p>Abstraksi adalah proses menyembunyikan detail kompleks dan hanya menampilkan bagian penting.</p>
+<ul>
+<li>Menyederhanakan program</li>
+<li>Fokus pada fungsi utama</li>
+<li>Meningkatkan keamanan</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Program 3</h3>
+
+<p>
+Program ini menggunakan abstract class sebagai dasar class turunan.
+Abstract class tidak bisa dibuat objek, tetapi method di dalamnya
+wajib diimplementasikan oleh class turunan.
+</p>
+
+<button onclick="buka('p3','https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f')">Jalankan Program</button>
+<div id="p3"></div>
+</div>
+
+<div class="card">
+<h3>Program 4</h3>
+<button onclick="buka('p4','https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a')">Jalankan Program</button>
+<div id="p4"></div>
+</div>
+
+<div class="card">
+<h3>Program 5</h3>
+<button onclick="buka('p5','https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078')">Jalankan Program</button>
+<div id="p5"></div>
+</div>
+
+<div class="card">
+<h3>Program 6</h3>
+<button onclick="buka('p6','https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5')">Jalankan Program</button>
+<div id="p6"></div>
+</div>
+
+<div class="card">
+<h3>Program 7</h3>
+<button onclick="buka('p7','https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37')">Jalankan Program</button>
+<div id="p7"></div>
+</div>
+
+<div class="card">
+<h3>Program 8</h3>
+<button onclick="buka('p8','https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6')">Jalankan Program</button>
+<div id="p8"></div>
+</div>
+
+</div>
+
+</body>
+</html>
