@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Materi Polimorfisme & Abstraksi - Saskia Mauli Tantria</title>
+<title>Polimorfisme dan Abstraksi - Saskia Mauli Tantria</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
 
 body{
 font-family:'Segoe UI',sans-serif;
@@ -23,7 +16,6 @@ color:#444;
 }
 
 /* HEADER */
-
 header{
 text-align:center;
 padding:40px 20px;
@@ -37,20 +29,14 @@ color:#c94f7c;
 margin-bottom:10px;
 }
 
-header p{
-font-size:14px;
-}
-
 /* CONTAINER */
-
 .container{
 max-width:1100px;
 margin:auto;
 padding:40px 20px;
 }
 
-/* GRID CARD */
-
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -58,63 +44,36 @@ gap:25px;
 }
 
 /* CARD */
-
 .card{
 background:white;
 border-radius:18px;
-padding:25px;
+padding:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
-position:relative;
-overflow:hidden;
 }
 
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card h2{
-color:#d6338
+color:#d63384;
 font-size:18px;
 margin-bottom:10px;
 }
 
-.card p{
-font-size:14px;
-margin-bottom:15px;
-}
-
 /* BUTTON */
-
 .btn{
-display:inline-block;
 padding:10px 18px;
 background:linear-gradient(135deg,#ff8fb1,#ff6fa5);
 color:white;
 border:none;
 border-radius:8px;
 cursor:pointer;
-font-size:14px;
-transition:0.2s;
+margin-top:10px;
 }
 
-.btn:hover{
-transform:scale(1.05);
-}
-
-/* FOOTER */
-
-footer{
-margin-top:50px;
-text-align:center;
-padding:20px;
-background:#ffd6eb;
-font-size:14px;
-}
-
-/* POPUP */
-
+/* MODAL */
 .modal{
 display:none;
 position:fixed;
@@ -133,26 +92,11 @@ padding:20px;
 width:90%;
 max-width:900px;
 border-radius:15px;
-position:relative;
-animation:fade 0.3s;
-}
-
-@keyframes fade{
-from{
-transform:scale(0.9);
-opacity:0;
-}
-to{
-transform:scale(1);
-opacity:1;
-}
 }
 
 .close{
-position:absolute;
-right:15px;
-top:10px;
-font-size:24px;
+float:right;
+font-size:22px;
 cursor:pointer;
 }
 
@@ -164,32 +108,23 @@ border-radius:10px;
 }
 
 /* RESPONSIVE */
-
 @media(max-width:600px){
-
-header h1{
-font-size:22px;
+iframe{height:400px;}
 }
-
-iframe{
-height:400px;
-}
-
-}
-
 </style>
+
+</head>
+
+<body>
 
 <header>
 <h1>Polimorfisme dan Abstraksi</h1>
-
-<div class="identitas">
-<p><b>Nama:</b> Saskia Mauli Tantria</p>
-<p><b>NIM:</b> 251410034</p>
-<p><b>Kelas:</b> SI2A</p>
-</div>
+<p><b>Saskia Mauli Tantria</b></p>
+<p>NIM : 251410034 | Kelas : SI2A</p>
 </header>
 
 <div class="container">
+<div class="grid">
 
 <div class="card">
 <h2>Pengertian Polimorfisme</h2>
@@ -202,156 +137,102 @@ height:400px;
 </ul>
 </div>
 
-<!-- PROGRAM 1 -->
 <div class="card">
-<h3>Polimorfisme dengan Inheritance</h3>
-
-<p>
-Polimorfisme memungkinkan satu variabel dengan tipe parent
-menyimpan objek child, sehingga method yang sama dapat menghasilkan
-output berbeda sesuai objeknya.
-</p>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4&run=true"></iframe>
-
-<pre>
-// source code sesuai dartpad
-</pre>
+<h2>Polimorfisme dengan Inheritance</h2>
+<p>Polimorfisme memungkinkan satu variabel dengan tipe parent menyimpan objek child.</p>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4&run=true')">Lihat</button>
 </div>
 
 <div class="card">
 <h2>Manfaat Polimorfisme</h2>
 <ul>
-<li><b>Fleksibilitas:</b> Program dapat bekerja dengan berbagai tipe objek tanpa mengubah kode utama.</li>
-<li><b>Extensibility:</b> Mudah menambahkan class baru tanpa mengubah struktur program yang sudah ada.</li>
-<li><b>Code Reusability:</b> Method yang sama dapat digunakan kembali pada banyak class.</li>
-<li><b>Maintainability:</b> Kode lebih mudah diperbaiki dan dikembangkan.</li>
+<li>Fleksibilitas</li>
+<li>Extensibility</li>
+<li>Code Reusability</li>
+<li>Maintainability</li>
 </ul>
-<p>
-Dengan adanya polimorfisme, program menjadi lebih efisien, rapi, dan mudah dikembangkan di masa depan.
-</p>
 </div>
 
-<!-- PROGRAM 2 -->
 <div class="card">
 <h2>Operator is dan as</h2>
-
-<p>
-Dalam Dart, operator <b>is</b> digunakan untuk mengecek tipe objek,
-sedangkan <b>as</b> digunakan untuk casting tipe objek.
-</p>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c&run=true"></iframe>
-
-<pre>
-// contoh penggunaan is dan as
-</pre>
+<p>Digunakan untuk pengecekan dan casting tipe data.</p>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c&run=true')">Lihat</button>
 </div>
 
 <div class="card">
 <h2>Pengertian Abstraksi</h2>
 <p>Abstraksi adalah proses menyembunyikan detail kompleks dan hanya menampilkan bagian penting.</p>
-<ul>
-<li>Menyederhanakan program</li>
-<li>Fokus pada fungsi utama</li>
-<li>Meningkatkan keamanan</li>
-</ul>
 </div>
 
-<!-- PROGRAM 3 -->
 <div class="card">
-<h3>Abstract Class</h3>
-
-<p>
-Abstract class tidak bisa dibuat objek dan digunakan sebagai dasar class turunan.
-</p>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f&run=true"></iframe>
-
-<pre>
-// abstract class
-</pre>
+<h2>Abstract Class</h2>
+<p>Abstract class tidak bisa dibuat objek.</p>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f&run=true')">Lihat</button>
 </div>
 
-<!-- PROGRAM 4 -->
 <div class="card">
-<h3>Abstract Method</h3>
-
-<p>
-Abstract method adalah method tanpa isi yang wajib diimplementasikan oleh class turunan.
-</p>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a&run=true"></iframe>
-
-<pre>
-// abstract method
-</pre>
+<h2>Abstract Method</h2>
+<p>Method tanpa isi yang wajib diimplementasikan.</p>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a&run=true')">Lihat</button>
 </div>
 
-<!-- PROGRAM 5 -->
 <div class="card">
-<h3>Interface di Dart</h3>
-
-<ul>
-<li>Dart tidak memiliki keyword interface</li>
-<li>Menggunakan implements</li>
-<li>Wajib override semua method</li>
-</ul>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078&run=true"></iframe>
-
-<pre>
-// interface dart
-</pre>
+<h2>Interface di Dart</h2>
+<p>Menggunakan implements.</p>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078&run=true')">Lihat</button>
 </div>
 
 <div class="card">
 <h2>Perbedaan Extends dan Implements</h2>
 <ul>
-<li>extends mewarisi isi method</li>
-<li>implements hanya struktur</li>
-<li>implements wajib override</li>
+<li>extends mewarisi isi</li>
+<li>implements struktur</li>
 </ul>
 </div>
 
-<!-- PROGRAM 6 -->
 <div class="card">
-<h3>Static Member & Method</h3>
-
-<p>
-Static dapat diakses tanpa membuat objek.
-</p>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5&run=true"></iframe>
-
-<pre>
-// static method
-</pre>
+<h2>Static Member & Method</h2>
+<p>Diakses tanpa objek.</p>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5&run=true')">Lihat</button>
 </div>
 
-<!-- PROGRAM 7 -->
 <div class="card">
-<h3>Sistem Pembayaran</h3>
-
-<iframe src="https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37&run=true"></iframe>
-
-<pre>
-// sistem pembayaran
-</pre>
+<h2>Sistem Pembayaran</h2>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37&run=true')">Lihat</button>
 </div>
 
-<!-- PROGRAM 8 -->
 <div class="card">
-<h3>Studi Kasus: Bentuk Geometri</h3>
+<h2>Studi Kasus Geometri</h2>
+<button class="btn" onclick="openPad('https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6&run=true')">Lihat</button>
+</div>
 
-<iframe src="https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6&run=true"></iframe>
-
-<pre>
-// geometri
-</pre>
+<div class="card">
+<h2>Kesimpulan</h2>
+<p>Dengan konsep OOP, program menjadi lebih terstruktur dan mudah dikembangkan.</p>
 </div>
 
 </div>
+</div>
+
+<!-- MODAL -->
+<div id="dartModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closePad()">✖</span>
+<iframe id="dartFrame"></iframe>
+</div>
+</div>
+
+<script>
+function openPad(link){
+document.getElementById("dartModal").style.display="block";
+document.getElementById("dartFrame").src=link;
+}
+
+function closePad(){
+document.getElementById("dartModal").style.display="none";
+document.getElementById("dartFrame").src="";
+}
+</script>
 
 </body>
 </html>
