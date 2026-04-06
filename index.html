@@ -49,39 +49,28 @@ box-shadow:0 6px 20px rgba(0,0,0,0.08);
 color:#d63384;
 }
 
-button{
-background:linear-gradient(135deg,#ff8fab,#ffb3c6);
-border:none;
-padding:12px 20px;
-border-radius:10px;
-color:white;
-font-weight:bold;
-cursor:pointer;
-margin-top:10px;
-}
-
 iframe{
 margin-top:15px;
 border:none;
 border-radius:12px;
 width:100%;
-height:500px;
+height:450px;
+}
+
+pre{
+background:#2d2d2d;
+color:#f8f8f2;
+padding:15px;
+border-radius:10px;
+overflow:auto;
+margin-top:10px;
+font-size:14px;
 }
 
 @media(max-width:600px){
-iframe{height:400px;}
+iframe{height:350px;}
 }
 </style>
-
-<script>
-function buka(id,link){
-let target=document.getElementById(id);
-if(target.innerHTML===""){
-target.innerHTML =
-'<iframe src="'+link+'?run=true&null_safety=true"></iframe>';
-}
-}
-</script>
 
 </head>
 
@@ -110,6 +99,7 @@ target.innerHTML =
 </ul>
 </div>
 
+<!-- PROGRAM 1 -->
 <div class="card">
 <h3>Polimorfisme dengan Inheritance</h3>
 
@@ -119,11 +109,12 @@ menyimpan objek child, sehingga method yang sama dapat menghasilkan
 output berbeda sesuai objeknya.
 </p>
 
-<button onclick="buka('p1','https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4')">
-Lihat DartPad
-</button>
-<div id="p1"></div>
-</div> 
+<iframe src="https://dartpad.dev/embed-inline.html?id=c97f81fc10217801e544c28178350ec4&run=true"></iframe>
+
+<pre>
+// source code sesuai dartpad
+</pre>
+</div>
 
 <div class="card">
 <h2>Manfaat Polimorfisme</h2>
@@ -138,20 +129,21 @@ Dengan adanya polimorfisme, program menjadi lebih efisien, rapi, dan mudah dikem
 </p>
 </div>
 
+<!-- PROGRAM 2 -->
 <div class="card">
 <h2>Operator is dan as</h2>
+
 <p>
-Dalam Dart, operator <b>is</b> digunakan untuk mengecek apakah suatu objek
-memiliki tipe tertentu, sedangkan operator <b>as</b> digunakan untuk
-melakukan casting atau mengubah tipe objek.
+Dalam Dart, operator <b>is</b> digunakan untuk mengecek tipe objek,
+sedangkan <b>as</b> digunakan untuk casting tipe objek.
 </p>
 
-<h3>Program 2</h3>
-<button onclick="buka('p2','https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c')">
-Lihat DartPad
-</button>
-<div id="p2"></div>
-</div>  
+<iframe src="https://dartpad.dev/embed-inline.html?id=630b27241f56d914b328120fcfd9073c&run=true"></iframe>
+
+<pre>
+// contoh penggunaan is dan as
+</pre>
+</div>
 
 <div class="card">
 <h2>Pengertian Abstraksi</h2>
@@ -163,105 +155,97 @@ Lihat DartPad
 </ul>
 </div>
 
+<!-- PROGRAM 3 -->
 <div class="card">
-<h3>Abstrak Class</h3>
+<h3>Abstract Class</h3>
 
 <p>
-Program ini menggunakan abstract class sebagai dasar class turunan.
-Abstract class tidak bisa dibuat objek, tetapi method di dalamnya
-wajib diimplementasikan oleh class turunan.
+Abstract class tidak bisa dibuat objek dan digunakan sebagai dasar class turunan.
 </p>
 
-<button onclick="buka('p3','https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f')">
-Jalankan Program
-</button>
-<div id="p3"></div>
+<iframe src="https://dartpad.dev/embed-inline.html?id=e42d7cd17e77cd8b71e68f6f36afb48f&run=true"></iframe>
+
+<pre>
+// abstract class
+</pre>
 </div>
 
+<!-- PROGRAM 4 -->
 <div class="card">
 <h3>Abstract Method</h3>
+
 <p>
-Program ini menunjukkan penggunaan <b>abstract method</b> dalam abstract class.
-Abstract method adalah method yang tidak memiliki isi (tanpa implementasi)
-dan hanya dideklarasikan pada abstract class.
+Abstract method adalah method tanpa isi yang wajib diimplementasikan oleh class turunan.
 </p>
 
-<button onclick="buka('p4','https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a')">
-Jalankan Program
-</button>
-<div id="p4"></div>
+<iframe src="https://dartpad.dev/embed-inline.html?id=b5fe85a8914dc8ae9a3398686712f76a&run=true"></iframe>
+
+<pre>
+// abstract method
+</pre>
 </div>
 
+<!-- PROGRAM 5 -->
 <div class="card">
 <h3>Interface di Dart</h3>
 
 <ul>
-<li>Dart tidak memiliki keyword khusus <b>interface</b></li>
-<li>Semua class bisa digunakan sebagai interface</li>
-<li>Menggunakan keyword <b>implements</b></li>
-<li>Semua method harus diimplementasikan ulang</li>
-<li>Tidak mewarisi isi method, hanya strukturnya</li>
+<li>Dart tidak memiliki keyword interface</li>
+<li>Menggunakan implements</li>
+<li>Wajib override semua method</li>
 </ul>
 
-<p><i>Interface membantu memastikan setiap class memiliki struktur method yang sama.</i></p>
+<iframe src="https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078&run=true"></iframe>
 
-<button onclick="buka('p5','https://dartpad.dev/embed-inline.html?id=4c1ff4cdbd19490a8fc80ef241fb3078')">
-Jalankan Program
-</button>
-<div id="p5"></div>
+<pre>
+// interface dart
+</pre>
 </div>
 
 <div class="card">
 <h2>Perbedaan Extends dan Implements</h2>
-
 <ul>
-<li><b>extends</b> digunakan untuk pewarisan (inheritance)</li>
-<li><b>implements</b> digunakan untuk menerapkan interface</li>
-<li><b>extends</b> mewarisi method beserta isinya</li>
-<li><b>implements</b> hanya mewarisi struktur method</li>
-<li><b>extends</b> tidak wajib override semua method</li>
-<li><b>implements</b> wajib override semua method</li>
+<li>extends mewarisi isi method</li>
+<li>implements hanya struktur</li>
+<li>implements wajib override</li>
 </ul>
-
-<p>
-Pada <b>implements</b>, semua method harus ditulis ulang karena tidak mewarisi isi method.
-Sedangkan pada <b>extends</b>, method dari parent bisa langsung digunakan.
-</p>
-
-<p><i>Pemilihan extends atau implements bergantung pada kebutuhan struktur program.</i></p>
 </div>
 
+<!-- PROGRAM 6 -->
 <div class="card">
-<h3>Program 6</h3>
-<p>
-Static adalah anggota class (variabel atau method) yang dapat diakses tanpa membuat objek terlebih dahulu.
-</p>
+<h3>Static Member & Method</h3>
 
 <p>
-Static member biasanya digunakan untuk menyimpan data yang bersifat umum,
-sedangkan static method digunakan untuk menjalankan fungsi yang tidak bergantung pada objek.
+Static dapat diakses tanpa membuat objek.
 </p>
 
-<button onclick="buka('p6','https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5')">
-Jalankan Program
-</button>
-<div id="p6"></div>
+<iframe src="https://dartpad.dev/embed-inline.html?id=0d9f969ba718b75320dd6e72da37f9f5&run=true"></iframe>
+
+<pre>
+// static method
+</pre>
 </div>
 
+<!-- PROGRAM 7 -->
 <div class="card">
 <h3>Sistem Pembayaran</h3>
-<button onclick="buka('p7','https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37')">
-Jalankan Program
-</button>
-<div id="p7"></div>
+
+<iframe src="https://dartpad.dev/embed-inline.html?id=c50c333dd08e867de98b6f24a37c6a37&run=true"></iframe>
+
+<pre>
+// sistem pembayaran
+</pre>
 </div>
 
+<!-- PROGRAM 8 -->
 <div class="card">
-<h3>Studi Kasus: Sistem Bentuk Geometri</h3>
-<button onclick="buka('p8','https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6')">
-Jalankan Program
-</button>
-<div id="p8"></div>
+<h3>Studi Kasus: Bentuk Geometri</h3>
+
+<iframe src="https://dartpad.dev/embed-inline.html?id=bc10324b593225722561015f14ee4fe6&run=true"></iframe>
+
+<pre>
+// geometri
+</pre>
 </div>
 
 </div>
